@@ -12,7 +12,9 @@ app.use(express.urlencoded({extended: false}))
 
 app.use(express.static('view'))
 
-
+app.get('/*', (req,res)=>{
+  res.sendFile(__dirname + "/404-page/404.html")
+})
 
 app.get('/api', (req, res)=>{
  // res.sendFile(__dirname +'/view/index.html')
